@@ -1,4 +1,15 @@
-const menu = {
+console.log(`
+  Bem-vindo ao Menu de Opções: 
+  1 - Pipoca     | Tempo Padrão: 10s
+  2 - Macarrão   | Tempo Padrão: 8s
+  3 - Carne      | Tempo Padrão: 15s
+  4 - Feijão     | Tempo Padrão: 12s
+  5 - Brigadeiro | Tempo Padrão: 8s
+
+  `);
+
+
+const menu_Opcoes = {
     1: {
         nome: 'Pipoca',
         tempo: 10
@@ -24,12 +35,12 @@ const menu = {
 
 
 
-function micro_Ondas(numero_Opcao,tempo) {
-    const opcoes = menu[numero_Opcao];
+function micro_Ondas(opcao_Menu,tempo) {
+    const opcoes = menu_Opcoes[opcao_Menu];
     
 
     if (!opcoes) {
-        return console.log('Prato inexistente');
+        return console.log('Opção inexistente');
     }
 
     let mensagem;
@@ -39,17 +50,16 @@ function micro_Ondas(numero_Opcao,tempo) {
 
     if (tempo < tempoPreparo) {
         mensagem = 'Tempo insuficiente!!!';
-    } else if (tempo > tempoPreparo * 2 && tempo <= tempoPreparo * 3) {
+    } else if (tempo >= tempoPreparo * 2 && tempo < tempoPreparo * 3) {
         mensagem = 'A comida queimou!!!';
-    } else if (tempo > tempoPreparo * 3) {
+    } else if (tempo >= tempoPreparo * 3) {
         mensagem = 'Kabummm!!!';
     } else {
         mensagem = 'Prato pronto, bom apeite!!!';
     }
     
 
-    return console.log(menu[numero_Opcao].nome + ':',mensagem);
+    return console.log(menu_Opcoes[opcao_Menu].nome + ':',mensagem);
 }
 
-
-micro_Ondas(3,31);
+micro_Ondas(1,19);
