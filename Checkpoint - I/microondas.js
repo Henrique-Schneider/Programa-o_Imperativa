@@ -1,3 +1,4 @@
+
 console.log(`
   Bem-vindo ao Menu de Opções: 
   1 - Pipoca     | Tempo Padrão: 10s
@@ -62,4 +63,4 @@ function micro_Ondas(opcao_Menu,tempo) {
     return console.log(menu_Opcoes[opcao_Menu].nome + ':',mensagem);
 }
 
-micro_Ondas(1,19);
+micro_Ondas(2,);
