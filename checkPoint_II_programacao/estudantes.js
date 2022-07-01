@@ -1,5 +1,5 @@
 //Passo 1 - Crie uma função construtora que tenha como atributos: nome (string), quantidade de faltas (number) e notas (array de números).
-function aluno(nome = " ", qtfaltas, notas = []) {
+function aluno(nome, qtfaltas, notas) {
   this.nome = nome;
   this.qtfaltas = qtfaltas;
   this.notas = notas;
@@ -54,10 +54,10 @@ const curso = {
       let faltas = alunoCurso.qtfaltas;
       let aprovado =
         (media >= this.notaAprovacao && faltas < this.faltasMaximas) ||
-        (faltas == this.faltasMaximas && media >= media10)
-          ? 'Aluno aprovado!'
-          : 'Aluno reprovado!';
-          
+        (faltas == this.faltasMaximas && media >= media10) ?
+        "Aluno aprovado!" :
+        "Aluno reprovado!";
+
       if (alunoCurso.nome == aluno) {
         console.log(
           "Aluno encontrado!!!",
@@ -90,9 +90,9 @@ const curso = {
       let faltas = alunoCurso.qtfaltas;
       let aprovado =
         (media >= this.notaAprovacao && faltas < this.faltasMaximas) ||
-        (faltas == this.faltasMaximas && media >= media10)
-          ? true
-          : false;
+        (faltas == this.faltasMaximas && media >= media10) ?
+        true :
+        false;
 
       resultado.push(aprovado);
     }
@@ -108,9 +108,7 @@ curso.cadastrarAluno("Shaianne Pereira", 0, [30, 70, 70]);
 
 //----------- lista dos alunos -----------//
 console.log("Curso:", curso.nomeDoCurso.toUpperCase());
-console.log(curso.listaAlunos)
-
-
+console.log(curso.listaAlunos);
 
 /*Passo 5 - Crie um método para o objeto curso que receba um aluno (como parâmetro) e retorne true se ele aprovou no curso ou false em caso de reprovação. Para ser aprovado, o aluno tem que ter uma média igual ou acima da nota de aprovação  e ter menos faltas que faltas máximas. Se tiver a mesma quantidade, tem que estar 10% acima da nota de aprovação.*/
 
